@@ -8,6 +8,33 @@
   <script defer src="./logic.js"></script>
 </head>
 <body>
-  
+  <div class="calcy">
+    <input type="text" readonly id="output" />
+    <div class="calcy__parentheses-container">
+      <button id="btn-opening-parenthese" class="btn btn--parenthese btn--value" value="(">(</button>
+      <button id="btn-closing-parenthese" class="btn btn--parenthese btn--value" value=")">)</button>
+    </div>
+    <div class="calcy__nums-btns-container">
+      <button class="btn btn--small btn--value">0</button>
+      <button class="btn btn--small btn--value">1</button>
+      <button class="btn btn--small btn--value">2</button>
+      <button class="btn btn--small btn--value">3</button>
+      <button class="btn btn--small btn--value">4</button>
+      <button class="btn btn--small btn--value">5</button>
+      <button class="btn btn--small btn--value">6</button>
+      <button class="btn btn--small btn--value">7</button>
+      <button class="btn btn--small btn--value">8</button>
+      <button class="btn btn--small btn--value">9</button>
+      <button class="btn btn--small btn--value">+</button>
+      <button class="btn btn--small btn--value">-</button>
+      <button class="btn btn--small btn--value">÷</button>
+      <button class="btn btn--small btn--value">×</button>
+      <button class="btn btn--small btn--value">%</button>
+      <button class="btn btn--small btn--value">.</button>
+      <button class="btn btn--small" id="btn-clear-all">C</button>
+      <button class="btn btn--small" id="btn-clear">←</button>
+      <button class="btn btn--small" id="btn-calc">=</button>
+    </div>
+  </div>
 </body>
 </html>
