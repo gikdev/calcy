@@ -1,0 +1,2 @@
+# calcy
+A simple calculator
