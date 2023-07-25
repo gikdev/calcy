@@ -2,9 +2,9 @@ class Calcy {
   constructor (parent) {
     this.output = parent.querySelector('#output')
     this.valueBtns = parent.querySelectorAll('.btn--value')
-    this.btnClear = parent.querySelector('#btn-clear')
-    this.btnClearAll = parent.querySelector('#btn-clear-all')
-    this.btnCalc = parent.querySelector('#btn-calc')
+    this.btnClear = parent.querySelector('.btn--clear')
+    this.btnClearAll = parent.querySelector('.btn--clear-all')
+    this.btnCalc = parent.querySelector('.btn--calc')
   }
   init = () => {
     this.setListeners()
