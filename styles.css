@@ -11,36 +11,82 @@ html { font-size: 62.5% }
 body {
   background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 }
+
+/** Theme **/
+:root {
+  --d-bg-1: #22252d;
+  --d-bg-2: #262a32;
+  --d-bg-3: #292d36;
+  --d-text: #fafafa;
+
+  --l-bg-1: #ffffff;
+  --l-bg-2: #f7f7f7;
+  --l-bg-3: #f9f9f9;
+  --l-text: #20222b;
+
+  --deleter: #d66061;
+  --other: #ffd166;
+  --operator: #26eccc;
+}
+html.dark-theme {
+  --text: var(--d-text);
+  --bg-1: var(--d-bg-1);
+  --bg-2: var(--d-bg-2);
+  --bg-3: var(--d-bg-3);
+  --shadow: 1px 0 3px 0 black;
+  --inner-shadow: inset 1px 0 3px 0 black;
+
+}
+html.light-theme {
+  --text: var(--l-text);
+  --bg-1: var(--l-bg-3);
+  --bg-2: var(--l-bg-2);
+  --bg-3: var(--l-bg-3);
+  --shadow: 1px 0 3px 0 hsla(0, 0%, 0%, 0.1);
+  --inner-shadow: inset 1px 0 3px 0 hsla(0, 0%, 0%, 0.1);
+}
+
+/** Calcy **/
 .calcy {
-  background: hsla(0, 0%, 0%, 0.2);
+  background: var(--bg-3);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  gap: 0.2rem;
+  gap: 1rem;
 }
 #output {
-  background: hsla(0, 0%, 0%, 0.2);
+  background: var(--bg-1);
   border: none;
-  color: white;
-  font-size: 3rem;
+  color: var(--text);
+  font-size: 2.5rem;
   letter-spacing: 0.4rem;
   padding: 0 2rem;
 }
 .btn {
   align-items: center;
-  background: hsla(0, 0%, 0%, 0.2);
+  background: var(--bg-2);
   border: none;
   display: flex;
   font-size: 2rem;
   justify-content: center;
+  transition: box-shadow 50ms;
+  box-shadow: var(--shadow);
 }
-.btn--deleter    { color: #f37794 }
-.btn--num        { color: white   }
-.btn--operator   { color: #06d6a0 }
-.btn--secondary { color: #ffd166 }
+.btn:active {
+  box-shadow: var(--inner-shadow);
+}
+.btn--deleter    { color: var(--deleter) }
+.btn--num        { color: var(--text)   }
+.btn--operator   { color: var(--operator) }
+.btn--secondary { color: var(--other) }
 
+/** Responsiveness **/
 @media (max-width: 599px) {
-  .calcy { height: 100% }
+  .calcy {
+    height: 100%;
+    min-width: 20rem;
+    padding: 1.5rem;
+  }
 }
 @media (min-width: 600px) {
   body {
@@ -52,8 +98,8 @@ body {
     border-radius: 1rem;
     height: 100%;
     max-height: 60rem;
-    max-width: 60rem;
-    padding: 1rem;
+    max-width: 40rem;
+    padding: 1.5rem;
   }
 }
 
