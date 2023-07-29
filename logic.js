@@ -21,16 +21,17 @@ class Calcy {
       this.errorMessage(true)
       return
     }
-    const convertedString = this.output.value.replace(/÷/g, '/').replace(/×/g, '*')
+    const convertedString = this.convertStr(this.output.value)
     try { this.output.value = eval(convertedString) }
     catch (e) { this.errorMessage() }
   }
-  errorMessage = (empty) => {
+  errorMessage = empty => {
     let perviousValue = this.output.value
     if (empty) this.output.value = 'Put something in!'
     if (!empty) this.output.value = 'Error... Try Again'
     setTimeout(() => { this.output.value = perviousValue }, 1000)
   }
+  convertStr = string => string.replace(/÷/g, '/').replace(/×/g, '*').replace(/π/g, '3.14')
   addFromValue = e => this.output.value += e.target.innerText
   clearAll = () => this.output.value = ''
   clear = () => this.output.value = this.output.value.slice(0, -1)

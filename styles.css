@@ -14,8 +14,8 @@ body {
 .calcy {
   background: hsla(0, 0%, 0%, 0.2);
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   gap: 0.2rem;
 }
 #output {
@@ -37,7 +37,7 @@ body {
 .btn--deleter    { color: #f37794 }
 .btn--num        { color: white   }
 .btn--operator   { color: #06d6a0 }
-.btn--parenthese { color: #ffd166 }
+.btn--secondary { color: #ffd166 }
 
 @media (max-width: 599px) {
   .calcy { height: 100% }
@@ -55,25 +55,25 @@ body {
     max-width: 60rem;
     padding: 1rem;
   }
-  .btn--0         { border-radius: 0 0 0 1rem    }
-  .btn--remainder { border-radius: 0 0 1rem 0    }
-  #output         { border-radius: 1rem 1rem 0 0 }
 }
 
 /** Placement **/
 .calcy {
   grid-template-areas:
-    'output output output output output output output output'
-    'output output output output output output output output'
-    'btn--parenthese-open btn--parenthese-close btn--clear-all btn--clear-all btn--clear btn--clear btn--multiplication btn--multiplication'
-    'btn--7 btn--7 btn--8 btn--8 btn--9 btn--9 btn--division btn--division'
-    'btn--4 btn--4 btn--5 btn--5 btn--6 btn--6 btn--subtraction btn--subtraction'
-    'btn--1 btn--1 btn--2 btn--2 btn--3 btn--3 btn--addition btn--addition'
-    'btn--0 btn--0 btn--dot btn--dot btn--calc btn--calc btn--remainder btn--remainder'
+    'output output output output'
+    'output output output output'
+    'btn--e btn--parenthese-open btn--parenthese-close btn--remainder'
+    'btn--pi btn--clear-all btn--clear  btn--multiplication'
+    'btn--7 btn--8 btn--9 btn--division'
+    'btn--4 btn--5 btn--6 btn--subtraction'
+    'btn--1 btn--2 btn--3 btn--addition'
+    'btn--0 btn--dot btn--calc btn--calc'; 
 }
 #output { grid-area: output }
 .btn--parenthese-open { grid-area: btn--parenthese-open }
 .btn--parenthese-close { grid-area: btn--parenthese-close }
+.btn--e { grid-area: btn--e }
+.btn--pi { grid-area: btn--pi }
 .btn--0 { grid-area: btn--0 }
 .btn--1 { grid-area: btn--1 }
 .btn--2 { grid-area: btn--2 }
