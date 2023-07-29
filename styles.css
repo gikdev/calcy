@@ -28,7 +28,7 @@ body {
   --other: #ffd166;
   --operator: #26eccc;
 }
-html.dark-theme {
+.calcy.dark-theme {
   --text: var(--d-text);
   --bg-1: var(--d-bg-1);
   --bg-2: var(--d-bg-2);
@@ -37,9 +37,9 @@ html.dark-theme {
   --inner-shadow: inset 1px 0 3px 0 black;
 
 }
-html.light-theme {
+.calcy.light-theme {
   --text: var(--l-text);
-  --bg-1: var(--l-bg-3);
+  --bg-1: var(--l-bg-1);
   --bg-2: var(--l-bg-2);
   --bg-3: var(--l-bg-3);
   --shadow: 1px 0 3px 0 hsla(0, 0%, 0%, 0.1);
@@ -51,7 +51,7 @@ html.light-theme {
   background: var(--bg-3);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   gap: 1rem;
 }
 #output {
@@ -79,6 +79,9 @@ html.light-theme {
 .btn--num        { color: var(--text)   }
 .btn--operator   { color: var(--operator) }
 .btn--secondary { color: var(--other) }
+#btn-theme {
+  padding: 1rem;
+}
 
 /** Responsiveness **/
 @media (max-width: 599px) {
@@ -108,12 +111,14 @@ html.light-theme {
   grid-template-areas:
     'output output output output'
     'output output output output'
+    'output output output output'
     'btn--e btn--parenthese-open btn--parenthese-close btn--remainder'
     'btn--pi btn--clear-all btn--clear  btn--multiplication'
     'btn--7 btn--8 btn--9 btn--division'
     'btn--4 btn--5 btn--6 btn--subtraction'
     'btn--1 btn--2 btn--3 btn--addition'
-    'btn--0 btn--dot btn--calc btn--calc'; 
+    'btn--0 btn--dot btn--calc btn--calc' 
+    'settings settings settings settings'; 
 }
 #output { grid-area: output }
 .btn--parenthese-open { grid-area: btn--parenthese-open }
@@ -139,3 +144,9 @@ html.light-theme {
 .btn--calc { grid-area: btn--calc }
 .btn--clear-all { grid-area: btn--clear-all }
 .btn--clear { grid-area: btn--clear }
+.settings { grid-area: settings }
+.settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
