@@ -59,6 +59,7 @@ body {
   display: grid;
 }
 #output {
+  text-align: right;
   background: var(--bg-1);
   border: none;
   color: var(--text);
@@ -67,6 +68,7 @@ body {
   padding: 0 2rem;
 }
 #operated {
+  text-align: right;
   background: var(--bg-1);
   border: none;
   color: var(--text-secondary);
