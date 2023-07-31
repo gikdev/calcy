@@ -24,6 +24,7 @@ body {
   --l-bg-3: #f9f9f9;
   --l-text: #20222b;
 
+  --text-secondary: #696969;
   --deleter: #d66061;
   --other: #ffd166;
   --operator: #26eccc;
@@ -54,11 +55,22 @@ body {
   grid-template-rows: repeat(10, 1fr);
   gap: 1rem;
 }
+.outputs {
+  display: grid;
+}
 #output {
   background: var(--bg-1);
   border: none;
   color: var(--text);
   font-size: 2.5rem;
+  letter-spacing: 0.4rem;
+  padding: 0 2rem;
+}
+#operated {
+  background: var(--bg-1);
+  border: none;
+  color: var(--text-secondary);
+  font-size: 2rem;
   letter-spacing: 0.4rem;
   padding: 0 2rem;
 }
@@ -109,9 +121,9 @@ body {
 /** Placement **/
 .calcy {
   grid-template-areas:
-    'output output output output'
-    'output output output output'
-    'output output output output'
+    'outputs outputs outputs outputs'
+    'outputs outputs outputs outputs'
+    'outputs outputs outputs outputs'
     'btn--e btn--parenthese-open btn--parenthese-close btn--remainder'
     'btn--pi btn--clear-all btn--clear  btn--multiplication'
     'btn--7 btn--8 btn--9 btn--division'
@@ -120,7 +132,7 @@ body {
     'btn--0 btn--dot btn--calc btn--calc' 
     'settings settings settings settings'; 
 }
-#output { grid-area: output }
+.outputs { grid-area: outputs }
 .btn--parenthese-open { grid-area: btn--parenthese-open }
 .btn--parenthese-close { grid-area: btn--parenthese-close }
 .btn--e { grid-area: btn--e }

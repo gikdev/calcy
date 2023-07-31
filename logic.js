@@ -2,6 +2,7 @@ class Calcy {
   constructor (parent) {
     this.calcy = parent
     this.output = parent.querySelector('#output')
+    this.operated = parent.querySelector('#operated')
     this.valueBtns = parent.querySelectorAll('.btn--value')
     this.btnClear = parent.querySelector('.btn--clear')
     this.btnClearAll = parent.querySelector('.btn--clear-all')
@@ -23,6 +24,7 @@ class Calcy {
     this.btnClearAll.addEventListener('click', this.clearAll)
     this.btnCalc.addEventListener('click', this.calc)
     this.btnTheme.addEventListener('click', this.toggleTheme)
+    this.calcy.addEventListener('click', this.updateOperated)
   }
   calc = () => {
     if (this.output.value === '') { 
@@ -30,7 +32,10 @@ class Calcy {
       return
     }
     const convertedString = this.convertStr(this.output.value)
-    try { this.output.value = eval(convertedString) }
+    try { 
+      this.operated.value = this.output.value
+      this.output.value = eval(convertedString)
+    }
     catch (e) { this.showErrMsg() }
   }
   showErrMsg = empty => {
@@ -77,7 +82,15 @@ class Calcy {
   }
   convertStr = string => string.replace(/÷/g, '/').replace(/×/g, '*').replace(/π/g, '3.14')
   addFromValue = e => this.output.value += e.target.innerText
-  clearAll = () => this.output.value = ''
+  clearAll = () => {
+    this.output.value = ''
+    this.operated.value = ''
+  }
+  updateOperated = e => {
+    if (e.target.tagName === 'BUTTON') 
+      if (!e.target.classList.contains('btn--calc'))
+        this.operated.value = ''
+  }
   clear = () => this.output.value = this.output.value.slice(0, -1)
 }
 
